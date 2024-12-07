@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      width: 600px; /* Set the desired width */
+      height: 600px; /* Set the desired height */
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    button {
+      display: block;
+      margin-bottom: 10px;
+    }
+    #screenshot-container {
+      position: relative;
+      text-align: center;
+    }
+    #screenshot-canvas {
+      border: 1px solid #ccc;
+      width: 100%; /* Make canvas responsive */
+      max-height: 300px;
+    }
+    .hidden {
+      display: none;
+    }
+    #notes-directory {
+      margin-top: 20px;
+      overflow-y: auto;
+      max-height: 200px;
+    }
+    .note-entry {
+      margin: 5px 0;
+      padding: 5px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+    }
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Site Notes</h1>
+  <textarea id="text-notes" placeholder="Write your notes here..."></textarea>
+  <button id="save-notes">Save Notes</button>
+  <button id="screenshot">Take Screenshot</button>
+  <div id="screenshot-container" class="hidden">
+    <canvas id="screenshot-canvas"></canvas>
+    <button id="draw-mode">Toggle Pen Tool</button>
+    <button id="save-annotated-screenshot">Save Screenshot</button>
+  </div>
+  <h2>Saved Notes Directory</h2>
+  <div id="notes-directory"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
